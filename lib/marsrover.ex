@@ -20,6 +20,17 @@ defmodule Marsrover do
     %Marsrover{x: x, y: y, direction: direction}
   end
 
+  @doc """
+  Rotates the marsrover to the left or right.
+
+  ## Examples
+
+      iex> marsrover = Marsrover.new(1, 2, "N")
+      %Marsrover{direction: "N", x: 1, y: 2}
+      iex> marsrover |> Marsrover.rotate("R") |> Marsrover.rotate("R") |> Marsrover.rotate("L")
+      %Marsrover{direction: "E", x: 1, y: 2}
+
+  """
   def rotate(rover, "R") do
     case rover.direction do
       "N" -> %{rover | direction: "E"}
