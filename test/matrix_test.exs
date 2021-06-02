@@ -23,6 +23,25 @@ defmodule MatrixTest do
     ]
     assert matrix == result
   end
+
+  test "Replace element at" do
+    matrix = Matrix.new(5,5) |> Matrix.replace_at(3,1, "X")
+    result = [
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,"X",0],
+      [0,0,0,0,0],
+    ]
+    assert matrix == result
+  end
+
+  test "Get element at" do
+    matrix = Matrix.new(5,5) |> Matrix.replace_at(2,4, "X") |> Matrix.at(2,4)
+    result = "X"
+
+    assert matrix == result
+  end
 end
 
 
