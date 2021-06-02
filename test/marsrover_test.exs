@@ -6,6 +6,26 @@ defmodule MarsroverTest do
     assert Marsrover.new(1, 2, "N") ==  %Marsrover{direction: "N", x: 1, y: 2}
   end
 
+  test "Turn Marsrover to the right" do
+    marsrover = Marsrover.new(0, 0, "N")
+
+    assert marsrover.direction == "N"
+
+    marsrover.rotate("R")
+
+    assert marsrover.direction == "E"
+  end
+
+  test "Turn Marsrover to the left" do
+    marsrover = Marsrover.new(0, 0, "N")
+
+    assert marsrover.direction == "N"
+
+    marsrover.rotate("L")
+
+    assert marsrover.direction == "W"
+  end
+
 end
 
 
