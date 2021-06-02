@@ -2,7 +2,7 @@ defmodule MarsroverTest do
   use ExUnit.Case
   doctest Marsrover
 
-  test "greets the world" do
-    assert Marsrover.hello() == :world
+  test "Create new Marsrover" do
+    assert Marsrover.new(1, 2, "N") ==  %Marsrover{direction: "N", x: 1, y: 2}
   end
 end
