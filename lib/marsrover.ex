@@ -19,4 +19,22 @@ defmodule Marsrover do
   def new(x, y, direction) do
     %Marsrover{x: x, y: y, direction: direction}
   end
+
+  def rotate(rover, "R") do
+    case rover.direction do
+      "N" -> %{rover | direction: "E"}
+      "E" -> %{rover | direction: "S"}
+      "S" -> %{rover | direction: "W"}
+      "W" -> %{rover | direction: "N"}
+    end
+  end
+
+  def rotate(rover, "L") do
+    case rover.direction do
+      "N" -> %{rover | direction: "W"}
+      "E" -> %{rover | direction: "N"}
+      "S" -> %{rover | direction: "E"}
+      "W" -> %{rover | direction: "S"}
+    end
+  end
 end
