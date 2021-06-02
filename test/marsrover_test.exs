@@ -22,6 +22,12 @@ defmodule MarsroverTest do
     assert marsrover.direction == "W"
   end
 
+  test "Move Marsrover towards direction" do
+    marsrover = Marsrover.new(0, 0, "N") |> Marsrover.move()
+
+    assert marsrover.current_status == "0, 1, N"
+  end
+
 end
 
 
