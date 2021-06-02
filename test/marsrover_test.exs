@@ -10,6 +10,12 @@ defmodule MarsroverTest do
     assert marsrover.y == 2
   end
 
+  test "Display Marsrover's current status" do
+    marsrover = Marsrover.new(0, 0, "N") |> Marsrover.current_status
+
+    assert marsrover == "0 0 N"
+  end
+
   test "Turn Marsrover to the right" do
     marsrover = Marsrover.new(0, 0, "N") |> Marsrover.rotate("R")
 
@@ -23,9 +29,9 @@ defmodule MarsroverTest do
   end
 
   test "Move Marsrover towards direction" do
-    marsrover = Marsrover.new(0, 0, "N") |> Marsrover.move()
+    marsrover = Marsrover.new(0, 0, "N") |> Marsrover.move() |> Marsrover.current_status
 
-    assert marsrover.current_status == "0, 1, N"
+    assert marsrover == "0 1 N"
   end
 
 end

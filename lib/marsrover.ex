@@ -48,4 +48,33 @@ defmodule Marsrover do
       "W" -> %{rover | direction: "S"}
     end
   end
+
+  @doc """
+  Displays the current status of the marsrover.
+
+  ## Examples
+
+      iex> Marsrover.new(1, 2, "N") |> Marsrover.current_status
+      "1 2 N"
+  """
+  def current_status(rover) do
+    "#{rover.x} #{rover.y} #{rover.direction}"
+  end
+
+  @doc """
+  Moves the marsrover towards the current direction.
+
+  ## Examples
+
+      iex> Marsrover.new(1, 2, "N") |> Marsrover.move |> Marsrover.current_status
+      "1 3 N"
+  """
+  def move(rover) do
+    case rover.direction do
+      "N" -> %{rover | y: rover.y + 1}
+      "E" -> %{rover | x: rover.x + 1}
+      "S" -> %{rover | y: rover.y - 1}
+      "W" -> %{rover | x: rover.x - 1}
+    end
+  end
 end
