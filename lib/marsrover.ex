@@ -2,7 +2,6 @@ defmodule Marsrover do
   @enforce_keys [:x, :y, :direction]
   defstruct x: 0, y: 0, direction: "N"
 
-
   @moduledoc """
   Documentation for `Marsrover`.
   """

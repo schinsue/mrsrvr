@@ -1,21 +1,22 @@
 # Marsrover
 
-**TODO: Add description**
+## Instructions
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `marsrover` to your list of dependencies in `mix.exs`:
+Run these commands from root directory to get the project running.
 
 ```elixir
-def deps do
-  [
-    {:marsrover, "~> 0.1.0"}
-  ]
-end
+mix deps.get
+mix test
+mix docs # This generates documentation
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/marsrover](https://hexdocs.pm/marsrover).
+Documentation is generated when running mix.docs, in case further explanation is needed.
 
+**Notes:**
+
+* Added collision detection and out of bounds detection, code will crash on encountering these errors,
+the assignment didn't say how to handle these.
+  
+* Execution of instructions is done recursively. Could probably be done in a cleaner way, but that'd be no fun.
+
+* Some of the mission file functions should probably be moved to a helper file.
