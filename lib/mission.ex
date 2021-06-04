@@ -98,7 +98,7 @@ defmodule Mission do
 
   def execute_instructions([], acc) do
     acc.rovers
-    |> Enum.map(fn r -> "#{r.x} #{r.y} #{r.direction}" end)
+    |> Enum.map(&Marsrover.current_status/1)
     |> Enum.join("\n")
   end
 end
